@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #dddbed;
+    margin: 0;
+    padding: 0;
+}
+
+/* nav */
+
+#Topnav {
+    font-family: "GmarketSansBold";
+    width: 100%;
+    height: 80px;
+    background-color: #ffd98d;
+    border-bottom: 2px solid #b7b4ac;
+    display: inline-block;
+    position: relative;
+}
+
+#Topnav p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+    display: inline;
+    color: #696554;
+    font-size: 18pt;
+}
+
+#title {
+    left: 50px;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li:hover {
+    filter: brightness(80%);
+    /*opacity:0;*/
+    transition: all .1s linear;
+}
+
+.menu li {
+    float: left;
+    margin-left: 10px;
+}
+
+.menu li img {
+    width: 60px;
+    height: 50px;
+}
+
+.slow .toggle-group {
+    transition: left 0.7s;
+    -webkit-transition: left 0.7s;
+}
+
+.complete {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: -100px;
+    height: 100%;
+    display: inline-block;
+    line-height: 80px;
+    transform: translate(-50%, -50%);
+}
+
+.showSwitch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 260px;
+}
+
+.complete_btn {
+    margin-left: 20px;
+    font-size: 16pt;
+    width: 150px;
+    height: 40px;
+    background-color: #fffbef;
+    color: #696554;
+    font-weight: bold;
+    border: 2px solid #696554;
+    border-radius: 7px;
+
+}
+
+/*switch*/
+.switch {
+    position: relative;
+    top: 20px;
+    width: 60px;
+    height: 34px;
+    margin: 0;
+    /* top: 50%;
+    transform: translateY(-50%); */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b7b4ac;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fffbef;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#switchBox:checked+.switchSlider {
+    background-color: #696554;
+}
+
+#switchBox:focus+.switchSlider {
+    box-shadow: 0 0 1px #696554;
+}
+
+#switchBox:checked+.switchSlider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switchSlider.round {
+    border-radius: 34px;
+}
+
+.switchSlider.round:before {
+    border-radius: 50%;
+}
+
+#arrowBack {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+/* 텍스트 입력*/
+.text_btn {
+    float: right;
+    margin: 10px;
+}
+
+.inputText {
+    resize: none;
+    font-size: 18px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/*휴지통*/
+.trash {
+    filter: drop-shadow(0 0 0.75rem red);
+}
+
+
+/*다이어리*/
+.diary_content {
+    /*width: 780px;*/
+    width: 100%;
+    height: 530px;
+    position: absolute;
+    display: inline-block;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.diary {
+    width: 100%;
+    height: auto;
+    /*overflow: hidden;*/
+}
+
+.diary_cover {
+    position: absolute;
+    /* width: 100%; */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.diary_paper {
+    position: absolute;
+    /* width: 100%; */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.daggu_ele {
+    width: 200px;
+    position: absolute;
+    top: 0;
+
+}
+
+.eleGroup {
+    position: relative;
+}
+
+.deleteIcon {
+    width: 20px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+.daggu_ele_text {
+    position: absolute;
+}
+
+/*슬라이드 업 다운버튼*/
+.slide_btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    float: right;
+    position: absolute;
+    top: -80px;
+    right: 20px;
+}
+
+#slideIcon {
+    display: none;
+}
+
+#slideIcon+label {
+    display: block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+#slideIcon+label span {
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 5px;
+    border-radius: 30px;
+    background-color: #696554;
+    transition: all .35s;
+}
+
+#slideIcon+label span:nth-child(1) {
+    top: 50%;
+    left: 17%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+#slideIcon+label span:nth-child(2) {
+    top: 50%;
+    right: 17%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+#slideIcon:checked+label span:nth-child(1) {
+    top: 50%;
+    left: 17%;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 1;
+}
+
+#slideIcon:checked+label span:nth-child(2) {
+    top: 50%;
+    right: 17%;
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 1;
+}
+
+/*탭메뉴*/
+.tab_wrap {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 100%;
+    transition: all 600ms ease-in-out;
+    z-index: 2147483647;
+}
+
+.nav li a {
+    color: black;
+}
+
+.active a {
+    color: #933DEA !important;
+}
+
+
+.tab-pane {
+    position: relative;
+    height: 500px;
+}
+
+.slider {
+
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+/*슬라이드 이미지*/
+.slider div img {
+    width: 100%;
+    background-size: 100px;
+}
+
+/*슬라이드 화살표 둘다*/
+.slick-arrow {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+}
+
+/*슬라이드 왼쪽 화살표*/
+.slick-prev {
+    left: -45px;
+    top: 50%;
+    z-index: 10;
+    background-image: url("../img/arrowL.png");
+    background-size: 45px;
+    border: none;
+    background-color: #00ff0000;
+    font-size: 0;
+    color: transparent;
+}
+
+/*슬라이드 오른쪽 화살표*/
+.slick-next {
+    right: -45px;
+    top: 50%;
+    z-index: 10;
+    background-image: url("../img/arrowR.png");
+    background-size: 45px;
+    border: none;
+    background-color: #00ff0000;
+    font-size: 0;
+    color: transparent;
+}
+
+.vibrate-1 {
+    -webkit-animation: vibrate-1 0.3s linear infinite both;
+    animation: vibrate-1 0.3s linear infinite both;
+}
+
+@-webkit-keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
