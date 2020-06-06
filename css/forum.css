@@ -5,7 +5,7 @@
 #cloud2{
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
-    width: 45%;   
+    width: 45%;
 }
 
 #cloud1{
@@ -13,4 +13,22 @@
     width: 40%;
 }
 
+hr.line{
+    border-top: 3px solid #745C97;
+    margin-top:1%;
+    padding:0;
+    width: 60%;
+}
+
+#title{
+    font-family: "GmarketSansBold";
+    color:#745C97;
+}
+
+@font-face { 
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') 
+    format('woff'); font-weight: normal; 
+    font-style: normal; 
+}
   
