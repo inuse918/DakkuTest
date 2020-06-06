@@ -1,4 +1,4 @@
-.img-responsive{
+.img-fluid{
     max-width: 100%;
 }
 
@@ -8,8 +8,9 @@
     width: 45%;   
 }
 
-div #cloud1{
-    right: 0;
+#cloud1{
+    margin-top: 10%;
+    width: 40%;
 }
 
   
