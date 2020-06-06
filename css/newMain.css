@@ -2,6 +2,7 @@
     margin-top: 0%;
     padding:0px;
     background-color: rgb(221, 202, 221);
+    border-radius: 0px !important;
 }
 .container-fluid {
   padding-right: 0%;
