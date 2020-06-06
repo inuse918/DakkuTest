@@ -1,3 +1,23 @@
-#col-sm-3{
-    min-height: 105px;
+.jumbotron{
+    margin-top: 0%;
+    padding:0px;
+    background-color: rgb(221, 202, 221);
+}
+.container-fluid {
+  padding-right: 0%;
+  padding-left: 0%;
+}
+@font-face { 
+    font-family: 'GmarketSansBold'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')         format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+#title{
+    font-family: GmarketSansBold;
+}
+
+#moon{
+    max-width: 50%;
 }
