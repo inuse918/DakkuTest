@@ -1,0 +1,15 @@
+.img-responsive{
+    max-width: 100%;
+}
+
+#cloud2{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    width: 45%;   
+}
+
+div #cloud1{
+    right: 0;
+}
+
+  
