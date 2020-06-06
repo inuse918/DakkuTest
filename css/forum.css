@@ -21,6 +21,7 @@ hr.line{
 }
 
 #title{
+    margin-top: 10px;
     font-family: "GmarketSansBold";
     color:#745C97;
 }
