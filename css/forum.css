@@ -38,11 +38,12 @@ hr.line{
 }
 
 #cloud1{
+    position: relative;
     margin-bottom: clamp(200px, 230px, 50%);
     width:25%;
     opacity: 70%;
+    z-index: 1;
 }
-
 #sub{
     font-size: clamp(1.1em, 1.3vw, 5vw);
     color: #606060;
