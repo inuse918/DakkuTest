@@ -1,37 +1,54 @@
 .img-fluid{
     max-width: 100%;
 }
-
-#cloud2{
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-    width: 45%;
-}
-
-#cloud1{
-    margin-top: 10%;
-    width: 40%;
-}
-
 hr.line{
     border-top: 3px solid #745C97;
     margin-top:1%;
     padding:0;
-    width: 60%;
+    width: 80%;
+    z-index:3;
 }
 
 #title{
     margin-top: 10px;
-    font-family: "GmarketSansBold";
     color:#745C97;
+    font-size: 30px;
+    font-family: "GmarketSansBold";
+    text-align: center;
+}
+#titleImage{
+    margin-top:2px;
+    max-width: 100%;
+    width: 40px;
+}
+#cloud2{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    width: 45%;
+    z-index:1;
+    opacity: 70%;
 }
 
-/* #tit{
-    height: 30px;
-} */
-#moon{
-    width: 10%;
+#cloud1{
+    margin-top: 18%;
+    width: 30%;
+    opacity: 70%;
 }
+
+#sub{
+    font-size: clamp(1vw, 1.3vw, 2vw);
+    color: #606060;
+    font-family: "GmarketSansMedium";
+    text-align: center;
+}
+
+
+@font-face { 
+    font-family: 'GmarketSansMedium'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') 
+    format('woff'); 
+    font-weight: normal; 
+    font-style: normal; }
 @font-face { 
     font-family: 'GmarketSansBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') 
