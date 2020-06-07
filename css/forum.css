@@ -15,11 +15,12 @@ hr.line{
     font-family: "GmarketSansBold";
     text-align: center;
     cursor: pointer;
+    margin-bottom: 0;
 }
 #titleImage{
     margin-top:2px;
     max-width: 100%;
-    width: clamp(1.5em, 3vw, 6em);
+    width: clamp(1.2em, 2.6vw, 6em);
 }
 
 #cloud2{
@@ -40,7 +41,7 @@ hr.line{
     color: #606060;
     font-family: "GmarketSansMedium";
     text-align: center;
-    margin-top: 0;
+
     cursor: pointer;
 }
 
