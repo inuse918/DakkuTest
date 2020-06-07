@@ -6,40 +6,40 @@ hr.line{
     margin-top:1%;
     padding:0;
     width: 80%;
-    z-index:3;
 }
 
 #title{
     margin-top: 10px;
     color:#745C97;
-    font-size: 30px;
+    font-size: clamp(2em, 3vw, 6em);
     font-family: "GmarketSansBold";
     text-align: center;
 }
 #titleImage{
     margin-top:2px;
     max-width: 100%;
-    width: 40px;
+    width: clamp(1.5em, 3vw, 6em);
 }
+
 #cloud2{
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
-    width: 45%;
-    z-index:1;
+    width: 40%;
     opacity: 70%;
 }
 
 #cloud1{
-    margin-top: 18%;
-    width: 30%;
+    margin-bottom: clamp(200px, 230px, 50%);
+    width:25%;
     opacity: 70%;
 }
 
 #sub{
-    font-size: clamp(1vw, 1.3vw, 2vw);
+    font-size: clamp(1.3em, 1.2vw, 2vw);
     color: #606060;
     font-family: "GmarketSansMedium";
     text-align: center;
+    margin-top: 0;
 }
 
 
