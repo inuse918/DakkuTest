@@ -11,9 +11,10 @@ hr.line{
 #title{
     margin-top: 10px;
     color:#745C97;
-    font-size: clamp(2em, 3vw, 6em);
+    font-size: clamp(2.3em, 3vw, 6em);
     font-family: "GmarketSansBold";
     text-align: center;
+    cursor: pointer;
 }
 #titleImage{
     margin-top:2px;
@@ -35,12 +36,20 @@ hr.line{
 }
 
 #sub{
-    font-size: clamp(1.3em, 1.2vw, 2vw);
+    font-size: clamp(1.1em, 1.3vw, 5vw);
     color: #606060;
     font-family: "GmarketSansMedium";
     text-align: center;
     margin-top: 0;
+    cursor: pointer;
 }
+
+#sub div:hover{
+    color:#000000;
+    font-weight: bold;
+}
+
+
 
 
 @font-face { 
