@@ -310,6 +310,9 @@ $(window).bind("beforeunload", function (e) {
 
 
 
+$('#helpIcon').click(()=>{
+    document.getElementById('id01').style.display='block'
+})
 
 // Get the modal
 var modal = document.getElementById('id01');
