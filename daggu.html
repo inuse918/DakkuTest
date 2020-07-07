@@ -5,11 +5,12 @@
     <title></title>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
         rel="stylesheet">
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
     <!--JQuery UI-->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -20,34 +21,57 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="css/daggu.css?1">
+    <link rel="stylesheet" href="css/daggu.css?3">
     <script type="text/javascript" src="daggu.js"></script>
 
     <!--font-->
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 
     <!--html2canvas-->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="icon" href="img/favicon.ico">
+    
 </head>
 
 <body>
 
-    <div id="Topnav">
+    <div id="Topnav" data-html2canvas-ignore="true">
         <a href="newMain.php" data-html2canvas-ignore="true"><img src="img/arrow_back.png" id="arrowBack"
                 class="backArrow"></a>
         <!--화살표-->
         <p id="title">다꾸다꾸다꾸</p>
         <ul class="menu">
-            <li><img src="img/마스킹테이프2.png" alt="마스킹 테이프 아이콘"></li>
-            <li><img src="img/메모장 아이콘.png" alt="메모장 아이콘"></li>
-            <li><img src="img/스티커 아이콘.png" alt="스티커 아이콘"></li>
-            <li><img src="img/텍스트 아이콘2.png" alt="텍스트 아이콘"></li>
-            <li><img src="img/속지 아이콘.png" alt="속지 아이콘"></li>
+            <li><img src="img/마스킹테이프2.png"></li>
+            <li><img src="img/메모장 아이콘.png"></li>
+            <li><img src="img/스티커 아이콘.png"></li>
+            <li><img src="img/텍스트 아이콘2.png"></li>
+            <li><img src="img/속지 아이콘.png"></li>
+            <li><img src="img/사진 아이콘.png"></li>
             <li><img src="img/쓰레기통수정.png" id="trashIcon"></li>
+            <li><img src="img/도움말아이콘.png"onclick="document.getElementById('id01').style.display='block'"></li>
         </ul>
+        
+        
+        <div id="id01" class="modal">
+            <div class="modal_content">
+                <img src="img/도움말사진1.PNG" id="help">
+            </div>
+        </div>
+            
+
+        
+
+
+
+
+
+
+
+
+
         <p class="showSwitch">비공개</p>
         <p style="display:none;" class="showSwitch"> 공개</p>
 
@@ -64,7 +88,6 @@
     <img class="diary_cover" src="img/다이어리커버1.png" width="1048px" height="636px">
     <img class="diary_paper" src="img/paper/격자.png" width="1000px" height="650px">
     <div class="diary_content"></div>
-
     <!--완성버튼-->
 
     <div class="tab_wrap down">
@@ -83,6 +106,7 @@
             <li><a href="#sticker" data-toggle="tab">STICKER</a></li>
             <li><a href="#text" data-toggle="tab">TEXT</a></li>
             <li><a href="#paper" data-toggle="tab">PAPER</a></li>
+            <li><a href="#myImg" data-toggle="tab">MY IMAGE</a></li>
         </ul>
         <!--탭 메뉴 하단-->
         <div class="tab-content">
@@ -103,9 +127,6 @@
                     </div>
                     <div>
                         <img src="img/maskingTape/universe.png">
-                    </div>
-                    <div>
-                        <img src="img/maskingTape/고구마단색s.png">
                     </div>
                     <div>
                         <img src="img/maskingTape/WEEKDAY.png">
@@ -182,11 +203,24 @@
             </div>
             <div class="tab-pane" id="text">
                 <form>
-                    <textarea placeholder="텍스트를 입력하세요." style="height:200px" class="form-control inputText" rows="10"
-                        cols="200"></textarea>
+                    <textarea id="textInput" placeholder="텍스트를 입력하세요." style="height:200px"
+                        class="form-control inputText" rows="10" cols="200"></textarea>
                     <select id="selectFont">
                         <option value="'Do Hyeon', sans-serif">Dohyun</option>
                         <option value="'Nanum Pen Script', cursive">나눔 펜</option>
+                        <option value="'Gamja Flower', cursive">감자꽃</option>
+                    </select>
+                    <span id="color_val"></span>
+                    <input type="color" id="colorChange"
+                        onchange="document.getElementById('textInput').style.color = 'this.value'"
+                        @change="changeColor()">
+                    <select name="font_size" id="font_size">
+                        <option value="">폰트 크기</option>
+                        <script>
+                            for (var i = 10; i < 32; i += 2) {
+                                document.write("<option value =" + i + "> " + i + "</option>");
+                            }
+                        </script>
                     </select>
                     <input type="button" id="text_sizeUp" value="+">
                     <input type="button" id="text_sizeDown" value="-">
@@ -223,246 +257,24 @@
                     <div>
                         <img src="img/paper/블랙.png">
                     </div>
-
                 </section>
-
             </div>
+            <div class="tab-pane" id="myImg">
+
+                <div class="showImg center-block">
+
+                </div>
+                <div class="input-file center-block">
+                    <label for="upload01" class="file-label">사진 업로드</label>
+                    <input type="file" name="" id="upload01" class="file-upload" />
+                    <label id="inputImg">사진 삽입</label>
+                    <label id="deleteUploadImg">삭제</label>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <script>
-        //슬라이드 탭메뉴 바꿨을 때 이미지 안 뜨는 거 해결
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            $('.slick-slider').slick('setPosition'); // 슬릭 위치 재배치
-        });
-
-        // 메뉴 클릭해서 탭메뉴 선택
-        $('.menu li').click(function () {
-            var idx = $(this).index() + 1;
-
-            if (idx == 6) {
-                var src = ($('#trashIcon').attr('src') == 'img/쓰레기통수정.png') ? 'img/쓰레기통 열린 아이콘.png' :
-                    'img/쓰레기통수정.png';
-                $('#trashIcon').toggleClass('trashOn');
-                $('#trashIcon').attr('src', src);
-
-                if ($('#trashIcon').hasClass('trashOn')) {
-                    $('.daggu_ele').addClass('trash');
-                    $('.daggu_ele').addClass('vibrate-1');
-
-                    $('.daggu_ele_text').addClass('trash');
-                    $('.daggu_ele_text').addClass('vibrate-1');
-
-                    // $('.eleGroup').append('<img src="img/criss-cross.png" class="deleteIcon">');
-
-                    $('.daggu_ele').click(function () {
-                        if ($('.daggu_ele').hasClass('trash')) {
-                            $(this).remove();
-                        }
-                    });
-
-                    $('.daggu_ele_text').click(function () {
-                        if ($('.daggu_ele_text').hasClass('trash')) {
-                            $(this).remove();
-                        }
-                    });
-
-                } else {
-                    // $('.deleteIcon').remove();
-                    $('.daggu_ele').removeClass('trash');
-                    $('.daggu_ele').removeClass('vibrate-1');
-                    $('.daggu_ele_text').removeClass('trash');
-                    $('.daggu_ele_text').removeClass('vibrate-1');
-                }
-                return false;
-            }
-
-            $('.tab-content div').removeClass('active');
-            $('.tab-content div:nth-child(' + idx + ')').addClass('active');
-            //$('.slick-slider').slick('refresh');
-
-            $('.slick-slider').slick('setPosition');
-            $('.nav li:nth-child(' + idx + ')').tab('show');
-
-            $("input:checkbox[id='slideIcon']").prop("checked", true);
-
-            if ($('.tab_wrap').hasClass('down')) {
-                $('.tab_wrap').removeClass('down');
-                $('.tab_wrap').css('top', '50%');
-            }
-        });
-
-        $("#switchBox").click(function () {
-            $(".showSwitch").toggle();
-        });
-
-        $(function () {
-            $("#trash").droppable({
-                accept: ".diary_content > div",
-                classes: {
-                    "ui-droppable-active": "ui-state-highlight"
-                },
-                drop: function (event, ui) {
-                    deleteImage(ui.draggable);
-                }
-            });
-        });
-
-        function deleteImage($item) {
-            $item.remove();
-        }
-        $(".complete_btn").on("click", function () {
-            html2canvas(document.querySelector("body")).then(canvas => {
-                saveAs(canvas.toDataURL('image/png'), "capture-test.png");
-                var photo = canvas.toDataURL("image/png");
-                $.ajax({
-                    method: 'POST',
-                    url: 'photo_upload.php',
-                    data: {
-                        photo: photo
-                    }
-                });
-            });
-
-
-        });
-
-        function saveAs(uri, filename) {
-            // 캡쳐된 파일을 이미지 파일로 내보낸다.
-            var link = document.createElement('a');
-            if (typeof link.download === 'string') {
-                link.href = uri;
-                link.download = filename;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } else {
-                window.open(uri);
-            }
-        }
-
-        $("#selectFont").change(function () {
-            var selectFont = $("#selectFont option:selected").val();
-            $(".inputText").css('font-family', selectFont);
-        });
-        var textSize = 18;
-        $("#text_sizeUp").click(function () {
-            textSize++;
-            $(".inputText").css('font-size', textSize);
-        });
-        $("#text_sizeDown").click(function () {
-            textSize--;
-            $(".inputText").css('font-size', textSize);
-        });
-
-        var css_test_idx = 1;
-        //이미지 클릭 시 다이어리 부분에 추가, 
-        $('img[src^="img/maskingTape/"],img[src^="img/stiker/"], img[src^="img/notePad/"]').click(function () {
-            var src = $(event.target).attr("src");
-            $('.diary_content').append('<div class="daggu_ele"><div class="eleGroup"><img src=' + src +
-                ' width="100%"></div></div>');
-
-            //드래그 가능하게, 이미지 위에 커서 올라갔을 때 커서 변경, 클릭했을때 맨앞으로 오게
-
-            $('.daggu_ele')
-                .draggable({
-                    containment: ".diary_content",
-                    cancel: ".deleteIcon"
-                })
-                .css('cursor', 'move')
-                .css('z-index', css_test_idx)
-                .resizable({
-                    //비율 유지
-                    aspectRatio: true,
-                    //마우스 hover 아닐때 핸들러 숨기기
-                    autoHide: true,
-                })
-                .mousedown(function () { // mousedown 이벤트 생성
-                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
-                    css_test_idx++;
-                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
-                });
-
-            if ($('#trashIcon').hasClass('trashOn')) {
-                $('.daggu_ele').addClass('trash');
-                $('.daggu_ele').addClass('vibrate-1');
-                $('.daggu_ele').click(function () {
-                    if ($('.daggu_ele').hasClass('trash')) {
-                        $(this).remove();
-                    }
-                });
-            }
-
-        });
-        $(".text_btn").click(function () {
-            var text = $(".inputText").val();
-            var selectFont = $("#selectFont option:selected").val();
-            $('.diary_content').append('<div class="daggu_ele_text" style="font-family:' + selectFont +
-                ';font-size:' + textSize + 'px;">' + text + '</div>');
-            $('.daggu_ele_text')
-                .draggable()
-                .css('cursor', 'move')
-                .css('z-index', css_test_idx)
-                .resizable({
-                    //비율 유지
-                    //aspectRatio: true,
-                    //마우스 hover 아닐때 핸들러 숨기기
-                    autoHide: true
-                })
-                .mousedown(function () { // mousedown 이벤트 생성
-                    $(this).css('z-index', css_test_idx); // 클릭한 이미지만 z-index 증가시킴
-                    css_test_idx++;
-                    // 그러면 이미지가 겹칠경우 클릭한 것이 항상 위에 표시됨
-                });
-
-            if ($('#trashIcon').hasClass('trashOn')) {
-                $('.daggu_ele_text').addClass('trash');
-                $('.daggu_ele_text').addClass('vibrate-1');
-                $('.daggu_ele_text').click(function () {
-                    if ($('.daggu_ele_text').hasClass('trash')) {
-                        $(this).remove();
-                    }
-                });
-            }
-            $(".inputText").val("");
-        });
-        //슬라이드 jquery 
-        $(".center").slick({
-            dots: false,
-            infinite: true,
-            centerMode: true,
-            slidesToShow: 5,
-            arrows: true,
-            slidesToScroll: 5
-        });
-
-        $('#slideIcon').click(function () {
-            //슬라이드가 아래로 내려가있는 상태
-            if ($('.tab_wrap').hasClass('down')) {
-                $("input:checkbox[id='slideIcon']").prop("checked", false);
-                // $('.tab_wrap').removeClass('down');
-                // $('.tab_wrap').css('top', '50%');
-            }
-            // 슬라이드 올라와있는 상태
-            else {
-                $('.tab_wrap').addClass('down');
-                $('.tab_wrap').css('top', '100%');
-            }
-        });
-
-
-        // 다이어리 속지 변경이벤트
-        $('img[src^="img/paper/"]').click(function () {
-            var src = $(event.target).attr("src");
-            $('.diary_paper').attr("src", src);
-        });
-
-        // 새로고침, 뒤로가기 버튼 누르면 경고창 띄움
-        $(window).bind("beforeunload", function (e) {
-            //return "창을 닫으시겠습니까?";
-        });
-    </script>
-
+    <script type="text/javascript" src="./js/daggu.js"></script>
 </body>
 
 </html>
